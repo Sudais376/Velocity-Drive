@@ -1,11 +1,21 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useState } from "react";
+import ContactForm from "./ContactForm";
 
 const FeaturedCars = () => {
+  const [showContactForm, setShowContactForm] = useState(false); // State for ContactForm
+
+
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const toggleContactForm = () => {
+    setShowContactForm((prevState) => !prevState); // Toggle ContactForm visibility
+  };
 
   return (
     <>
@@ -51,6 +61,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -72,6 +83,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -93,6 +105,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -114,6 +127,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -135,6 +149,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -156,6 +171,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -177,6 +193,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -198,6 +215,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 mt-4 rounded-md w-full"
               >
@@ -219,6 +237,7 @@ const FeaturedCars = () => {
             </p>
             <button
             data-aos ="fade-up"
+            onClick={toggleContactForm} // Toggle ContactForm on click
                 className="absolute left-0 bottom-2 text-white font-bold bg-[#E63946] hover:bg-[#BDC3C7] hover:!text-[#1B1F3B] px-6
             py-2 rounded-md w-full"
               >
@@ -227,6 +246,9 @@ const FeaturedCars = () => {
           </div>
         </div>
       </section>
+
+            {/* Conditionally render ContactForm */}
+            {showContactForm && <ContactForm closeContactForm={toggleContactForm} />}
     </>
   );
 };
