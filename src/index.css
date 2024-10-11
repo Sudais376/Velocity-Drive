@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width : 880px) {
+    .fimg {
+        width: 100% !important;
+    }
+}
+
+@media (min-width : 881px) {
+    .imgd {
+        max-width: 400px;
+    }
+}
+
+@media (max-width : 1271px) {
+    .inventoryimg {
+        width: 100% !important;
+    }
+    .Rimg {
+        width: 100% !important;
+    }
+}
+
+@media (min-width : 1223px) {
+    .inventoryimg {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1271px) {
+    .Rimg {
+        height: 400px;
+    }
+}
